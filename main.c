@@ -13,9 +13,9 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 		else if (stack_a->index >= i && stack_b->index < i)
 			printf("%-4i\n", stack_a->arr[i]);
 		else if (stack_a->index < i && stack_b->index >= i)
-			printf("%10i\n", stack_b->arr[i]);
+			printf("%8i\n", stack_b->arr[i]);
 		else if (stack_a->index >= i && stack_b->index >= i)
-			printf("%-4i%10i\n", stack_a->arr[i], stack_b->arr[i]);
+			printf("%-4i%8i\n", stack_a->arr[i], stack_b->arr[i]);
 		i--;
 	}
 	printf("____  ____\n  a    b\n");
@@ -45,5 +45,24 @@ int	main(void)
 	scanf("%i", &n);
 	init(&a, n);
 	init(&b, n);
+	for (int i = 0; i < n; i++)
+	{
+			write(1, "\ni = ", 5);
+			scanf("%i", &s);
+			push(&a, s);
+	}
+	print_stack(&a, &b);
+	swap_a_b(&a);
+	print_stack(&a, &b);
+	push_a_b(&b, &a);
+	push_a_b(&b, &a);
+	push_a_b(&b, &a);
+	print_stack(&a, &b);
+	swap_a_b(&a);
+	print_stack(&a, &b);
+	push_a_b(&a, &b);
+	push_a_b(&a, &b);
+	push_a_b(&a, &b);
+	print_stack(&a, &b);
 	return (0);
 }

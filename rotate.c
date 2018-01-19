@@ -54,7 +54,7 @@ void	reverse_a_b(t_stack *stack)
 	}
 }
 
-void	reverse_botch(t_stack *stack_a, t_stack *stack_b)
+void	reverse_both(t_stack *stack_a, t_stack *stack_b)
 {
 	reverse_a_b(stack_a);
 	reverse_a_b(stack_b);

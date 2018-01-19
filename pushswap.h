@@ -25,6 +25,7 @@ int		pop_a_b(t_stack *stack);
 int		is_full(t_stack *stack);
 int		is_empty(t_stack *stack);
 int		is_sorted(t_stack *stack);
+int 	is_opo_sorted(t_stack *stack);
 void	print_stack(t_stack *stack_a, t_stack *stack_b);
 void	find_min(t_stack *stack);
 #endif

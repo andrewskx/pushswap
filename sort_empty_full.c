@@ -40,6 +40,24 @@ int		is_sorted(t_stack *stack)
 	return (1);
 }
 
+int		is_opo_sorted(t_stack *stack)
+{
+	int i;
+
+	i = 0;
+	while (i < stack->index - 1)
+	{
+		if (stack->arr[i] > stack->arr[i + 1])
+		{
+			find_min(stack);
+			return (0);
+		}
+		i++;
+	}
+	find_min(stack);
+	return (1);
+}
+
 void	find_min(t_stack *stack)
 {
 	int i;
