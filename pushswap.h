@@ -3,6 +3,7 @@
 //#include "libft.h"
 // #include "ft_printf.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 typedef struct	s_stack
 {
@@ -11,7 +12,9 @@ typedef struct	s_stack
 	int index;
 	int min_elem_index;
 }				t_stack;
-
+void	delete_mem(t_stack *a, t_stack *b);
+int		validation(int arg, char **argv);
+void	sort_algorithm(t_stack *a, t_stack *b);
 void	init(t_stack *stack, int size);
 void	swap_a_b(t_stack *stack);
 void	swap_both(t_stack *stack_a, t_stack *stack_b);

@@ -6,7 +6,7 @@
 /*   By: anboscan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 18:49:40 by anboscan          #+#    #+#             */
-/*   Updated: 2018/01/19 19:41:20 by anboscan         ###   ########.fr       */
+/*   Updated: 2018/01/20 19:50:37 by anboscan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		is_sorted(t_stack *stack)
 	int i;
 
 	i = 0;
-	while (i < stack->index - 1)
+	while (i < stack->index)
 	{
 		if (stack->arr[i] < stack->arr[i + 1])
 		{
@@ -45,7 +45,7 @@ int		is_opo_sorted(t_stack *stack)
 	int i;
 
 	i = 0;
-	while (i < stack->index - 1)
+	while (i <= stack->index)
 	{
 		if (stack->arr[i] > stack->arr[i + 1])
 		{
@@ -67,10 +67,13 @@ void	find_min(t_stack *stack)
 	{
 		i = 0;
 		min = stack->arr[0];
-		while (i < stack->index)
+		while (i <= stack->index)
 		{
 			if (stack->arr[i] < min)
+			{
 				stack->min_elem_index = i;
+				min = stack->arr[i];
+			}
 			i++;
 		}
 	}

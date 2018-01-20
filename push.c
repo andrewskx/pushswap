@@ -6,7 +6,7 @@
 /*   By: anboscan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/19 18:34:29 by anboscan          #+#    #+#             */
-/*   Updated: 2018/01/19 20:02:14 by anboscan         ###   ########.fr       */
+/*   Updated: 2018/01/20 18:56:36 by anboscan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ void	push(t_stack *stack, int element)
 	{
 		stack->index++;
 		stack->arr[stack->index] = element;
-		if (element <= stack->arr[stack->min_elem_index])
-			stack->min_elem_index = stack->index;
+		find_min(stack);
+	}
+	else
+	{
+		write(1, "Error\nPushing to full stack\nExit(1)\n", 36);
+		exit(1);
 	}
 }
 
@@ -34,9 +38,10 @@ int	 pop_a_b(t_stack *stack)
 	if (stack->index == -1)
 	{
 		write(1, "\nPop empty stack\nExit(1)\n", 25);
-	   exit(1);
+		exit(1);
 	}	   
 	stack->index--;
+	find_min(stack);
 	is_sorted(stack);
 	return (stack->arr[stack->index + 1]);
 }	
