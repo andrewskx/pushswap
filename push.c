@@ -42,6 +42,5 @@ int	 pop_a_b(t_stack *stack)
 	}	   
 	stack->index--;
 	find_min(stack);
-	is_sorted(stack);
 	return (stack->arr[stack->index + 1]);
 }	

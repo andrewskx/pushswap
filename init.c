@@ -1,4 +1,3 @@
-
 #include "pushswap.h"
 
 void	print_stack(t_stack *stack_a, t_stack *stack_b)

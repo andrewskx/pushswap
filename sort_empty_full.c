@@ -69,7 +69,7 @@ void	find_min(t_stack *stack)
 		min = stack->arr[0];
 		while (i <= stack->index)
 		{
-			if (stack->arr[i] < min)
+			if (stack->arr[i] <= min)
 			{
 				stack->min_elem_index = i;
 				min = stack->arr[i];

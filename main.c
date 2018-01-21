@@ -9,7 +9,7 @@ int	main(int arg, char **argv)
 	if (!validation(arg, argv))
 	{
 		write(1, "Error\n", 6);
-		return (0);
+		return (0); 
 	}
 	i = 1;
 	init(&a, arg - 1);
@@ -20,7 +20,7 @@ int	main(int arg, char **argv)
 		i++;
 	}
 	sort_algorithm(&a, &b);
-	print_stack(&a, &b);
+	// print_stack(&a, &b);
 	delete_mem(&a, &b);
 	return (0);
 }
