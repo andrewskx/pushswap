@@ -6,7 +6,7 @@
 /*   By: anboscan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:22:08 by anboscan          #+#    #+#             */
-/*   Updated: 2018/01/21 17:22:41 by anboscan         ###   ########.fr       */
+/*   Updated: 2018/01/22 16:43:41 by anboscan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int				check(t_stack *a, t_stack *b)
 		else if (!ft_strcmp("pa", buff))
 			push_a_b(a, b);
 		else if (!ft_strcmp("ra", buff))
-			reverse_a_b(a);
+			rotate_a_b(a);
 		else if (!ft_strcmp("pb", buff))
 			push_a_b(b, a);
 		else if (!ft_strcmp("rra", buff))
-			rotate_a_b(a);
+			reverse_a_b(a);
 		clean(buff);
 	}
 	free(buff);

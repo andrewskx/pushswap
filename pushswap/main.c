@@ -6,7 +6,7 @@
 /*   By: anboscan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:33:18 by anboscan          #+#    #+#             */
-/*   Updated: 2018/01/21 18:25:33 by anboscan         ###   ########.fr       */
+/*   Updated: 2018/01/22 16:37:08 by anboscan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,11 @@ int				main(int arg, char **argv)
 		i = 2;
 	else
 		i = 1;
-	while (i < arg)
-		push(&a, atoi(argv[i++]));
+	arg--;
+	while (i <= arg)
+		push(&a, atoi(argv[arg--]));
 	if (flag)
-			ft_printf("Init a && b\n");
+		ft_printf("Init a && b\n");
 	sort_algorithm(&a, &b, flag);
 	delete_mem(&a, &b);
 	return (0);

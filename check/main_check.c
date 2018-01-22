@@ -6,7 +6,7 @@
 /*   By: anboscan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:23:01 by anboscan          #+#    #+#             */
-/*   Updated: 2018/01/21 17:23:15 by anboscan         ###   ########.fr       */
+/*   Updated: 2018/01/22 16:36:47 by anboscan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ int	main(int arg, char **argv)
 	i = 1;
 	init(&a, arg - 1);
 	init(&b, arg - 1);
-	while (i < arg)
-	{
-		push(&a, ft_atoi(argv[i]));
-		i++;
-	}
+	arg--;
+	while (i <= arg)
+		push(&a, atoi(argv[arg--]));
 	if (check(&a, &b))
 		write(1, "OK\n", 3);
 	else

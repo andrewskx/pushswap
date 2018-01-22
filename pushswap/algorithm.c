@@ -6,7 +6,7 @@
 /*   By: anboscan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/21 17:32:23 by anboscan          #+#    #+#             */
-/*   Updated: 2018/01/21 18:44:37 by anboscan         ###   ########.fr       */
+/*   Updated: 2018/01/22 16:42:31 by anboscan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void			sort_algorithm(t_stack *a, t_stack *b, int flag)
 		if (a->min_elem_index > a->index / 2)
 		{
 			rotate_a_b(a);
-			write(1, "rra\n", 4);
+			write(1, "ra\n", 3);
 		}
 		else if (a->min_elem_index <= a->index / 2)
 		{
 			reverse_a_b(a);
-			write(1, "ra\n", 3);
+			write(1, "rra\n", 4);
 		}
 		else if (a->min_elem_index == a->index - 1)
 		{
