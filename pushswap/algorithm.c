@@ -17,23 +17,24 @@ static	void	sort_algorithm_2(t_stack *a, t_stack *b, int flag, int spec)
 	if (spec)
 		while (!is_empty(b))
 		{
-			write(1, "pb\n", 3);
+			write(1, "pa\n", 3);
 			push_a_b(a, b);
-			if (flag)
-				print_stack(a, b);
+			flag == 1 ? print_stack(a, b) : 0;
 		}
 	else if (!spec)
 	{
 		if (!is_sorted(a) && a->min_elem_index == a->index)
 		{
 			push_a_b(b, a);
-			write(1, "pa\n", 3);
+			write(1, "pb\n", 3);
+			flag == 1 ? print_stack(a, b) : 0;
 		}
 	}
 }
 
 void			sort_algorithm(t_stack *a, t_stack *b, int flag)
 {
+	flag == 1 ? print_stack(a, b) : 0;
 	while (!is_sorted(a))
 	{
 		if (a->min_elem_index > a->index / 2)
@@ -51,9 +52,9 @@ void			sort_algorithm(t_stack *a, t_stack *b, int flag)
 			swap_a_b(a);
 			write(1, "sa\n", 3);
 		}
+		flag == 1 ? print_stack(a, b) : 0;
 		sort_algorithm_2(a, b, flag, 0);
 		find_min(a);
-		flag == 1 ? print_stack(a, b) : 0;
 	}
 	sort_algorithm_2(a, b, flag, 1);
 }

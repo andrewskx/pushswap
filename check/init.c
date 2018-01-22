@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
+#include <stdio.h>
 void	print_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	int i;
@@ -20,23 +20,23 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 	while (i != -1)
 	{
 		if (stack_a->index < i && stack_b->index < i)
-			ft_printf("\n");
+			printf("\n");
 		else if (stack_a->index >= i && stack_b->index < i)
-			ft_printf("% -4i\n", stack_a->arr[i]);
+			printf("% -4i\n", stack_a->arr[i]);
 		else if (stack_a->index < i && stack_b->index >= i)
-			ft_printf("% 8i\n", stack_b->arr[i]);
+			printf("% 8i\n", stack_b->arr[i]);
 		else if (stack_a->index >= i && stack_b->index >= i)
-			ft_printf("% -4i% 4i\n", stack_a->arr[i], stack_b->arr[i]);
+			printf("% -4i% 4i\n", stack_a->arr[i], stack_b->arr[i]);
 		i--;
 	}
-	ft_printf("____  ____\n  a     b\n");
+	printf("____  ____\n  a     b\n");
 }
 
 void	init(t_stack *stack, int size)
 {
 	if (size <= 0)
 	{
-		ft_printf("Negative size\nExit(1)\n");
+		printf("Negative size\nExit(1)\n");
 		exit(1);
 	}
 	stack->arr = (int*)malloc(sizeof(int) * size);

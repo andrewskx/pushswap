@@ -54,13 +54,10 @@ int				main(int arg, char **argv)
 	else
 		i = 1;
 	while (i < arg)
-	{
-		push(&a, atoi(argv[i]));
-		i++;
-	}
-	sort_algorithm(&a, &b, flag);
+		push(&a, atoi(argv[i++]));
 	if (flag)
-		print_stack(&a, &b);
+			ft_printf("Init a && b\n");
+	sort_algorithm(&a, &b, flag);
 	delete_mem(&a, &b);
 	return (0);
 }

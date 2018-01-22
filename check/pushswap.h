@@ -22,7 +22,7 @@ typedef struct	s_stack
 	int index;
 	int min_elem_index;
 }				t_stack;
-int				ft_printf(const char *format, ...);
+//int				ft_printf(const char *format, ...);
 int				ft_atoi(const char *str);
 int				ft_strcmp(const char *s1, const char *s2);
 void			*ft_bzero(void *s, unsigned int n);

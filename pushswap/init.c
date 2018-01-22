@@ -30,6 +30,7 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 		i--;
 	}
 	ft_printf("____  ____\n  a     b\n");
+	ft_printf("_____________________________________________\n");
 }
 
 void	init(t_stack *stack, int size)

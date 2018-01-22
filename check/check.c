@@ -22,10 +22,12 @@ static	void	clean(char *buff)
 
 static	void	check_len(char *buff)
 {
+		char s;
+
 	if (buff[2] == '\n')
 		buff[2] = '\0';
-	else if (buff[3] == '\n')
-		buff[3] = '\0';
+	else if (buff[2] != '\n' && buff[2] != '\0')
+		read(0, &s, 1);
 }
 
 int				check(t_stack *a, t_stack *b)
@@ -39,15 +41,16 @@ int				check(t_stack *a, t_stack *b)
 		if (!ft_strcmp("sa", buff))
 			swap_a_b(a);
 		else if (!ft_strcmp("pa", buff))
-			push_a_b(b, a);
+			push_a_b(a, b);
 		else if (!ft_strcmp("ra", buff))
 			reverse_a_b(a);
 		else if (!ft_strcmp("pb", buff))
-			push_a_b(a, b);
+			push_a_b(b, a);
 		else if (!ft_strcmp("rra", buff))
 			rotate_a_b(a);
 		clean(buff);
 	}
 	free(buff);
+	print_stack(a, b);
 	return (is_sorted(a) && is_empty(b));
 }

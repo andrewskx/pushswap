@@ -63,7 +63,8 @@ LIBFILES =	ft_strlen.c \
 			ft_strsplit.c \
 			ft_wstrlen.c \
 			ft_memdel.c \
-			ft_itoa_ularge.c 
+			ft_itoa_ularge.c \
+			ft_atoi.c
 TAGSRC = $(addprefix tags/, $(TAGFILES))
 PRTSRC = $(addprefix print/, $(PRTFILES))
 GETSRC = $(addprefix gets/, $(GETFILES))
